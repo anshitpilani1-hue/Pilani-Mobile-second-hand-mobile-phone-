@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilani Mobile</title>
+
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd, #ffe0b2);
+}
+
+/* Container card */
+.container {
+  position: relative;
+  width: 90vw;
+  max-width: 400px;
+  aspect-ratio: 1/1;
+  padding: 20px;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Background phone image */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  height: 110%;
+  background: url('https://images.unsplash.com/photo-1580910051078-c022b3ed1d3e?fit=contain&auto=format') center/contain no-repeat;
+  transform: translate(-50%, -50%);
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* Ensure text is above background */
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Title */
+.title {
+  color: red;
+  font-weight: bold;
+  font-size: 8vw;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 4vw;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Details */
+.details {
+  font-size: 4.5vw;
+  font-weight: bold;
+  line-height: 1.8;
+  text-align: left;
+  width: 90%;
+  margin-bottom: 12px;
+}
+
+/* Price */
+.price {
+  font-size: 6vw;
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Responsive for laptops / large screens */
+@media (min-width: 768px) {
+  .title { font-size: 32px; }
+  .subtitle { font-size: 18px; }
+  .details { font-size: 20px; }
+  .price { font-size: 28px; }
+}
+
+/* Very small screens */
+@media (max-width: 350px) {
+  .title { font-size: 24px; }
+  .subtitle { font-size: 14px; }
+  .details { font-size: 12px; }
+  .price { font-size: 18px; }
+}
+
+/* Ultra-wide / ultra-tall screens adjustments */
+@media (min-aspect-ratio: 1/1) {
+  .container { width: 60vw; max-width: 450px; }
+}
+@media (max-aspect-ratio: 1/1) {
+  .container { width: 90vw; max-width: 400px; }
+}
+</style>
+</head>
+
+<body>
+<div class="container" contenteditable="true">
+  <div class="title">📱 Pilani Mobile 📱</div>
+  <div class="subtitle">Mobile Details</div>
+  <div class="details">
+    Model Name - <br>
+    RAM - <br>
+    Storage - <br>
+    IMEI Number - <br>
+  </div>
+  <div class="price">Price - ₹</div>
+</div>
+</body>
+</html>
